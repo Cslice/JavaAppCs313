@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.mycompany.webapp;
+package login;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -18,8 +18,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author cameronthomas
  */
-@WebServlet(name = "HelloServlet", urlPatterns = {"/HelloServlet"})
-public class HelloServlet extends HttpServlet {
+@WebServlet(name = "ValidateLogin", urlPatterns = {"/ValidateLogin"})
+public class SignIn extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,11 +38,10 @@ public class HelloServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet HelloServlet</title>");            
+            out.println("<title>Servlet ValidateLogin</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet HelloServlet at " + request.getContextPath() + "</h1>");
-            out.println("This is a servlet that has changed<br />");
+            out.println("<h1>Servlet ValidateLogin at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }

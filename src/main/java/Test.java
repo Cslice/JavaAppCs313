@@ -1,10 +1,14 @@
+
+
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
-package login;
+
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -18,8 +22,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author cameronthomas
  */
-@WebServlet(name = "SignIn", urlPatterns = {"/SignIn"})
-public class SignIn extends HttpServlet {
+@WebServlet(name = "test", urlPatterns = {"/test"})
+public class Test extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,25 +45,10 @@ public class SignIn extends HttpServlet {
             out.println("<title>Servlet SignIn</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet SignIn at " + request.getContextPath() + "</h1>");
+            out.println("<h1>" + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
-    }
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
     }
 
     /**
@@ -73,13 +62,15 @@ public class SignIn extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        
         String username = request.getParameter("inputUsername");
-        username = "asdf";
         //System.out.println(book);
         //int chapter = Integer.parseInt(request.getParameter("txtChapter"));
         //int verse = Integer.parseInt(request.getParameter("txtVerse"));
         request.setAttribute("username", username);
-        request.getRequestDispatcher("newPost.jsp").forward(request, response);
+        request.getRequestDispatcher("newPost.jsp").forward(request, response); 
+
     }
 
     /**
